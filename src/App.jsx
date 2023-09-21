@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="dashboard"
+          path="/"
           element={<Homepage handleShowNav={handleShowNav} showNav={showNav} />}
         />
         <Route
