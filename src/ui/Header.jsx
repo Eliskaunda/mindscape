@@ -41,7 +41,7 @@ function Header({ handleShowNav, showNav }) {
             sx={{ width: 30, height: 30, bgcolor: "#152a4f" }}
           />
           <p className=" hidden sm:block text-black font-semibolds tracking-wide">
-            Denis Kyusya
+            Felista Kaunda
           </p>
 
           <ChevronDown />
