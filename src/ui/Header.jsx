@@ -1,5 +1,11 @@
 import { Avatar, Badge } from "@mui/material";
-import { Search, Bell, ChevronDown, MenuButton } from "react-bootstrap-icons";
+import {
+  Search,
+  Bell,
+  ChevronDown,
+  MenuButton,
+  CalendarCheck,
+} from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 
 function Header({ handleShowNav, showNav }) {
@@ -30,10 +36,12 @@ function Header({ handleShowNav, showNav }) {
       </div>
 
       <div className="flex items-center gap-4 ">
-        <Badge variant="dot" color="primary">
-          <Bell />
-        </Badge>
-
+        <CalendarCheck className="text-orange text-lg" />
+        <div>
+          <Badge variant="dot" color="primary">
+            <Bell className="text-orange text-lg" />
+          </Badge>
+        </div>
         <div className="flex items-center gap-2 bg-white px-2 py-1 rounded-md">
           <Avatar
             alt="Remy Sharp"
