@@ -10,7 +10,7 @@ export function ChatBox() {
         <div>
           <div
             className="flex items-center justify-between gap-4 px-1 py-2 border border-white"
-            onClick={() => navigate("/app/profile")}
+            onClick={() => navigate("/profile")}
           >
             <Avatar />
             <div className="flex flex-col">

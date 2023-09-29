@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Overview() {
   return (
-    <div className="py-3 overflow-hidden">
+    <div className="py-3 px-10 overflow-hidden">
       <div>
         <h1 className="text-lightBlue font-bold tracking-widest text-lg">
           Discover therapists
@@ -12,21 +12,30 @@ function Overview() {
           Get connected to professional private therapist sessions
         </p>
       </div>
+      {/* DISCOVER DOCTORS */}
+      <div className="flex gap-6 flex-wrap flex-1 justify-center sm:justify-normal my-3">
+        <Discover />
+        <Discover />
+        <Discover />
+        <Discover />
+        <Discover />
+        <Discover />
+      </div>
 
-      <div className="flex items-center justify-center flex-wrap gap-4 my-4 overflow-hidden">
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
+      {/* FRIENDS */}
+      <div>
+        <h1 className="text-lightBlue font-bold tracking-widest text-lg">
+          Discover friends
+        </h1>
 
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
+        <div className="flex gap-6 flex-wrap flex-1 justify-center sm:justify-normal ">
+          <AddFriend />
+          <OpenFriend />
+          <AddFriend />
+          <OpenFriend />
+          <AddFriend />
+          <OpenFriend />
+        </div>
       </div>
     </div>
   );
@@ -38,18 +47,19 @@ function Discover() {
   function handleStartChat() {
     // GO TO PRIVATE CHAT WITH THE CHAT ID
     // navigate('/app/chat/:id')
-    navigate("/app/chat/");
+    navigate("/chat");
   }
   return (
     <div className="my-2">
-      <div className="bg-white px-3 pb-7 w-max rounded-md my-2">
+      <div className="bg-white px-3 pb-7 w-[11rem] h-52 rounded-md my-2 ">
         <div className="absolute translate-y-[-1.5rem]">
           <Avatar />
         </div>
 
-        <div className="relative translate-y-[1rem] space-y-2">
+        {/* <div className="relative translate-y-[1rem] space-y-2"> */}
+        <div className="flex flex-col justify-between relative top-6 gap-3">
           <div className="space-y-1">
-            <h2 className="text-lg font-semibold text-lightBlue tracking-wider">
+            <h2 className="text-base font-semibold text-lightBlue tracking-wider">
               Allison Nderitu
             </h2>
 
@@ -76,6 +86,44 @@ function Discover() {
           </button>
         </div>
       </div>
+    </div>
+  );
+}
+
+function AddFriend() {
+  return (
+    <div className="flex flex-col justify-between items center bg-white pt-4 px-4 h-52 w-[11rem] rounded-md mt-4">
+      <div className="w-full flex flex-col items-center gap-6">
+        <Avatar style={{ width: 55, height: 55 }} />
+        <div className="flex flex-col items-center">
+          <h1 className="text-lightBlue tracking-wide font-medium text-base">
+            Joseph Kangethe
+          </h1>
+          <p className="text-sm">Naivasha</p>
+        </div>
+      </div>
+      <button className="outline-none border border-b-orange py-1">
+        Add friend
+      </button>
+    </div>
+  );
+}
+
+function OpenFriend() {
+  return (
+    <div className="flex flex-col justify-between items center bg-white pt-4 px-4 h-52 w-[11rem] rounded-md mt-4">
+      <div className="w-full flex flex-col items-center gap-6">
+        <Avatar style={{ width: 55, height: 55 }} />
+        <div className="flex flex-col items-center">
+          <h1 className="text-lightBlue tracking-wide font-medium text-base">
+            Joseph Kangethe
+          </h1>
+          <p className="text-sm">Naivasha</p>
+        </div>
+      </div>
+      <button className="outline-none border border-b-lightBlue py-1">
+        Friends
+      </button>
     </div>
   );
 }
