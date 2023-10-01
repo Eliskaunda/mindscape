@@ -4,9 +4,11 @@ import Header from "./Header";
 function AppLayout({ showNav, handleShowNav }) {
   return (
     <div className="flex w-full h-screen">
-      <div className="bg-grey w-full px-3 sm:px-3 text-black">
+      <div className="bg-grey w-full  text-black">
         <Header handleShowNav={handleShowNav} showNav={showNav} />
-        <Outlet />
+        <main className="py-4 px-10">
+          <Outlet />
+        </main>
       </div>
     </div>
   );

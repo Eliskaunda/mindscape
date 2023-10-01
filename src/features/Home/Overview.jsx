@@ -1,5 +1,6 @@
 import { Avatar, Stack } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "react-bootstrap-icons";
+import { Link, useNavigate } from "react-router-dom";
 
 function Overview() {
   return (
@@ -24,9 +25,16 @@ function Overview() {
 
       {/* FRIENDS */}
       <div>
-        <h1 className="text-lightBlue font-bold tracking-widest text-lg">
-          Discover friends
-        </h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-lightBlue font-bold tracking-widest text-lg">
+            Discover friends
+          </h1>
+
+          <Link to="/chat" className="flex items-center gap-2">
+            <p>View friends</p>
+            <ArrowRight style={{ color: "black" }} />
+          </Link>
+        </div>
 
         <div className="flex gap-6 flex-wrap flex-1 justify-center sm:justify-normal ">
           <AddFriend />

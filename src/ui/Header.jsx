@@ -6,7 +6,7 @@ import {
   CalendarCheck,
   FileEarmarkPlay,
 } from "react-bootstrap-icons";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Popcontent from "./Popover";
 
 function Header() {
@@ -40,25 +40,25 @@ function Actions() {
   const navigate = useNavigate();
   return (
     <ul className="flex items-center gap-8 ">
-      <li onClick={() => navigate("/appointments")}>
+      <NavLink onClick={() => navigate("/appointments")}>
         <Popcontent title="Appointments">
           <CalendarCheck className="text-black text-lg" />
         </Popcontent>
-      </li>
+      </NavLink>
 
-      <li onClick={() => navigate("/resources")}>
+      <NavLink onClick={() => navigate("/resources")}>
         <Popcontent title="Resources">
           <FileEarmarkPlay className="text-black text-lg" />
         </Popcontent>
-      </li>
+      </NavLink>
 
-      <li onClick={() => navigate("/notifications")}>
+      <NavLink onClick={() => navigate("/notifications")}>
         <Popcontent title="Notifications">
           <Badge variant="dot" color="primary">
             <Bell className="text-black text-lg" />
           </Badge>
         </Popcontent>
-      </li>
+      </NavLink>
 
       <li className="flex items-center gap-2 bg-white px-2 py-1 rounded-md">
         <Avatar
