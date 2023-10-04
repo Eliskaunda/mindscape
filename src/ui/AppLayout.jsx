@@ -1,15 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
-function AppLayout({ showNav, handleShowNav }) {
+function AppLayout() {
   return (
-    <div className="flex w-full h-screen">
-      <div className="bg-grey w-full  text-black">
-        <Header handleShowNav={handleShowNav} showNav={showNav} />
-        <main className="py-4 px-10">
-          <Outlet />
-        </main>
-      </div>
+    <div>
+      <Header />
+
+      <main className="min-h-full ">
+        <Outlet />
+      </main>
     </div>
   );
 }

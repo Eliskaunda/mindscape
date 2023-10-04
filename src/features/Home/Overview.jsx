@@ -59,14 +59,14 @@ function Discover() {
   }
   return (
     <div className="my-2">
-      <div className="bg-white px-3 pb-7 w-[11rem] h-52 rounded-md my-2 ">
+      <div className="bg-white px-3 pb-7 w-[12rem] h-max rounded-md my-2 ">
         <div className="absolute translate-y-[-1.5rem]">
           <Avatar />
         </div>
 
         {/* <div className="relative translate-y-[1rem] space-y-2"> */}
         <div className="flex flex-col justify-between relative top-6 gap-3">
-          <div className="space-y-1">
+          <div className="space-y-1 border-b-2 p-b-1">
             <h2 className="text-base font-semibold text-lightBlue tracking-wider">
               Allison Nderitu
             </h2>

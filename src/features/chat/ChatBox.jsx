@@ -24,10 +24,10 @@ export function ChatBox() {
             <ThreeDots className="text-xl" />
           </div>
 
-          <div className="relative w-full p-6 overflow-y-auto sm:h-[52rem] h-[38rem] bg-white border-b border-gray-200 flex flex-col">
+          {/* <div className="relative w-full p-6 overflow-y-auto sm:h-[52rem] h-[38rem] bg-white border-b border-gray-200 flex flex-col">
             <Messages />
             <Messages />
-          </div>
+          </div> */}
         </div>
 
         <div>
@@ -45,7 +45,7 @@ export function ChatBox() {
   );
 }
 
-function Messages() {
+export function Messages() {
   return (
     <>
       <SentMessage />

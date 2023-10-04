@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      sans: "Mooli, sans-serif",
+      sans: ["Roboto Mono", "monospace"],
     },
 
     extend: {

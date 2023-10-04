@@ -3,7 +3,7 @@ import { CheckAll } from "react-bootstrap-icons";
 
 export function ChatMessage() {
   return (
-    <div className="my-2">
+    <div className="py-1 px-2">
       <div className="flex items-start gap-3 rounded-md bg-white py-2 px-3">
         <Avatar />
 
