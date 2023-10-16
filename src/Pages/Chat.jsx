@@ -6,12 +6,13 @@ export default function Chat() {
       <div className="absolute left-0">Messages</div>
 
       <div className="border-l-2 h-full absolute left-[25vw]   place-content-end">
-        <div className="p-3 flex flex-col h-full  overflow-y-scroll">
+        <textarea placeholder="Type a message" rows={4} cols={36} />
+        <div className="p-3 flex flex-col h-full overflow-y-scroll mb-3">
           <Messages />
         </div>
         <form
           action=""
-          className="absolute bottom-0 w-full px-4 py-6 bg-lightBlue flex items-center gap-1  "
+          className="absolute bottom-0 w-full px-4 py-5 bg-lightBlue flex items-center gap-1  "
         >
           <input
             type="text"
@@ -34,13 +35,15 @@ function Messages() {
       <ReceivedMessage />
       <SentMessage />
       <ReceivedMessage />
+      <SentMessage />
+      <ReceivedMessage />
     </>
   );
 }
 
 function ReceivedMessage() {
   return (
-    <div className="self-start bg-grey  rounded-lg flex items-center w-1/2">
+    <div className="self-start bg-grey  rounded-lg flex items-center w-1/2 ">
       <p className="text-sm sm:text-sm  p-2 tracking-wider">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
         laborum sed voluptatum at. Praesentium labore, neque beatae, placeat
