@@ -26,7 +26,10 @@ function App() {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="appointments" element={<Appointments />} />
           <Route path="/resources" element={<ResourceLayout />}>
-            <Route index element={<Navigate replace to="/resources/all" />} />
+            <Route
+              index
+              element={<Navigate replace to="/resources/documents" />}
+            />
             <Route path="/resources/all" element={<AllResources />} />
             <Route path="/resources/documents" element={<Documents />} />
             <Route path="/resources/videos" element={<Videos />} />
