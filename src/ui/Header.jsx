@@ -12,11 +12,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
   return (
-    <header className="flex bg-grey px-6 py-3 items-center justify-between ">
+    <header className="flex bg-grey px-6 py-3 items-center justify-between border-b border-orange ">
       <div>
         <h1
           onClick={() => navigate("/dashboard")}
-          className="text-lightBlue text-base sm:text-xl cursor-pointer mr-2"
+          className="text-orange text-base sm:text-xl md:text-2xl cursor-pointer mr-2"
         >
           Mindscape
         </h1>

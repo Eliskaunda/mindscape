@@ -8,7 +8,7 @@ function Overview() {
   return (
     <div className="py-3 px-10 overflow-hidden">
       <div>
-        <h1 className="text-lightBlue font-bold tracking-widest text-lg">
+        <h1 className="text-orange font-bold tracking-widest md:text-xl text-lg">
           Discover therapists
         </h1>
         <p className="text-black text-sm tracking-wide font-light">
@@ -26,9 +26,9 @@ function Overview() {
       </div>
 
       {/* FRIENDS */}
-      <div>
+      <div className="border-t border-orange">
         <div className="flex items-center justify-between">
-          <h1 className="text-lightBlue font-bold tracking-widest text-lg">
+          <h1 className="text-orange font-bold tracking-widest text-lg md:text-xl ">
             Discover friends
           </h1>
 

@@ -1,4 +1,5 @@
-import { Send } from "react-bootstrap-icons";
+import { Avatar } from "@mui/material";
+import { ChevronLeft, Send } from "react-bootstrap-icons";
 
 export default function Chat() {
   return (
@@ -6,7 +7,15 @@ export default function Chat() {
       <div className="absolute left-0">Messages</div>
 
       <div className="border-l-2 h-full absolute left-[25vw]   place-content-end">
-        <textarea placeholder="Type a message" rows={4} cols={36} />
+        <div className="bg-grey px-3 py-5 fixed w-full">
+          <div className="flex items-center gap-4">
+            <ChevronLeft />
+            <div className="flex items-end gap-2">
+              <Avatar style={{ width: 30, height: 30 }} />
+              <h1 className="text-black font-semibold">Allison Nderitu</h1>
+            </div>
+          </div>
+        </div>
         <div className="p-3 flex flex-col h-full overflow-y-scroll mb-3">
           <Messages />
         </div>
