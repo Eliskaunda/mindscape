@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pause, Play } from "react-bootstrap-icons";
 
 export function AudioCard() {
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
 
   function handlePlay() {
     setPlaying(!playing);

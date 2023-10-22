@@ -1,13 +1,16 @@
 import { Avatar } from "@mui/material";
-import { ChevronLeft, Send } from "react-bootstrap-icons";
+import { ChevronLeft, Plus, Send } from "react-bootstrap-icons";
 
 export default function Chat() {
+  function handleAddFile() {
+    <input type="file" name="" id="" />;
+  }
   return (
     <div className="h-[91vh] relative top-0 translate-y-0 grid grid-cols-[auto_75vw]">
       <div className="absolute left-0">Messages</div>
 
       <div className="border-l-2 h-full absolute left-[25vw]   place-content-end">
-        <div className="bg-grey px-3 py-5 fixed w-full">
+        <div className="bg-grey px-3 py-5 fixed w-[73vw]">
           <div className="flex items-center gap-4">
             <ChevronLeft />
             <div className="flex items-end gap-2">
@@ -23,9 +26,10 @@ export default function Chat() {
           action=""
           className="absolute bottom-0 w-full px-4 py-5 bg-lightBlue flex items-center gap-1  "
         >
+          <Plus onClick={handleAddFile} style={{ fontSize: "2rem" }} />
           <input
             type="text"
-            placeholder="type here"
+            placeholder="Type here"
             className="bg-white w-full px-3 py-2 rounded-lg focus:outline-none text-black"
           />
           <Send style={{ fontSize: 20 }} />

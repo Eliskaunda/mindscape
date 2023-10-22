@@ -50,7 +50,10 @@ function Header() {
           </span>
           <p className="hidden sm:block">Resources</p>
         </NavLink>
-        <NavLink className="text-sm md:text-base flex items-center gap-2">
+        <NavLink
+          to="notifications"
+          className="text-sm md:text-base flex items-center gap-2"
+        >
           <span className=" text-black">
             <Bell />
           </span>

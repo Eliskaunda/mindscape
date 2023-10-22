@@ -10,4 +10,11 @@
 body {
   /* background-color: #e9eef7; */
   box-sizing: inherit;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+a.active {
+  color: #f28e1e;
+  border-bottom: 1px solid #f28e1e;
 }

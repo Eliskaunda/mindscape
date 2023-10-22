@@ -10,6 +10,7 @@ import {
   X,
   List,
 } from "react-bootstrap-icons";
+import { NavLink } from "react-router-dom";
 
 function Navigation({ handleShowNav, showNav }) {
   const [state, setState] = React.useState({
@@ -65,26 +66,26 @@ function NavContent({ handleShowNav }) {
         </div>
 
         <div className="flex flex-col gap-4 pt-2 items-start ">
-          <li className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
+          <NavLink className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
             <LightningCharge className="text-lg" />
             <span className="text-sm">Overview</span>
-          </li>
+          </NavLink>
 
-          <li className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
+          <NavLink className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
             <Chat className="text-lg" />
 
             <span className="text-sm">Chat</span>
-          </li>
+          </NavLink>
 
-          <li className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
+          <NavLink className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
             <FileEarmark className="text-lg" />
             <span className="text-sm">Resources</span>
-          </li>
+          </NavLink>
 
-          <li className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
+          <NavLink className=" px-1 py-2 active:border active:border-r-orange focus:bg-grey focus:text-black cursor-pointer flex items-end gap-2">
             <Lock className="text-lg" />
             <span className="text-sm">Private Chat</span>
-          </li>
+          </NavLink>
         </div>
       </ul>
 

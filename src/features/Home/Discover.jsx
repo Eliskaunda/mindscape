@@ -7,13 +7,13 @@ export function Discover() {
   function handleStartChat() {
     // GO TO PRIVATE CHAT WITH THE CHAT ID
     // navigate('/app/chat/:id')
-    navigate("/chat");
+    navigate("/chats");
   }
   return (
     <div className="my-2">
       <div className="bg-grey px-3 pb-7 w-[12rem] h-max rounded-md my-2 ">
         <div className="absolute translate-y-[-1.5rem]">
-          <Avatar />
+          <Avatar style={{ width: 30, height: 30 }} />
         </div>
 
         {/* <div className="relative translate-y-[1rem] space-y-2"> */}
@@ -33,9 +33,9 @@ export function Discover() {
           </div>
 
           <Stack direction="row" spacing={1}>
-            <Avatar />
-            <Avatar />
-            <Avatar />
+            <Avatar style={{ width: 30, height: 30 }} />
+            <Avatar style={{ width: 30, height: 30 }} />
+            <Avatar style={{ width: 30, height: 30 }} />
           </Stack>
 
           <button
