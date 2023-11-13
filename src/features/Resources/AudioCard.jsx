@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pause, Play } from "react-bootstrap-icons";
+// import aud from "./audio.mp3";
 
 export function AudioCard() {
   const [playing, setPlaying] = useState(false);

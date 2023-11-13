@@ -11,6 +11,7 @@ import AllResources from "./features/Resources/AllResources";
 import Documents from "./features/Resources/Documents";
 import Videos from "./features/Resources/Videos";
 import Audio from "./features/Resources/Audio";
+import Patients from "./features/patients/Patients";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="appointments" element={<Appointments />} />
+          <Route path="patients" element={<Patients />} />
           <Route path="/resources" element={<ResourceLayout />}>
             <Route
               index

@@ -1,10 +1,10 @@
 import { Avatar } from "@mui/material";
 import {
-  Bell,
   Calendar3,
   ChatDots,
   ChevronDown,
   Lightbulb,
+  Mask,
 } from "react-bootstrap-icons";
 
 import { NavLink, useNavigate } from "react-router-dom";
@@ -51,6 +51,15 @@ function Header() {
           <p className="hidden sm:block">Resources</p>
         </NavLink>
         <NavLink
+          to="patients"
+          className="text-sm md:text-base flex items-center gap-2"
+        >
+          <span className=" text-black">
+            <Mask />
+          </span>
+          <p className="hidden sm:block">Patient</p>
+        </NavLink>
+        {/* <NavLink
           to="notifications"
           className="text-sm md:text-base flex items-center gap-2"
         >
@@ -58,7 +67,7 @@ function Header() {
             <Bell />
           </span>
           <p className="hidden sm:block">Notifications</p>
-        </NavLink>
+        </NavLink> */}
       </nav>
 
       <div className="flex items-center gap-2">

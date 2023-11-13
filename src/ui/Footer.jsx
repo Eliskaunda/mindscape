@@ -14,9 +14,16 @@ export default function Footer() {
       </nav>
       <div></div>
       <div>
-        <form action="" className="flex flex-col items-center">
+        <form
+          action=""
+          className="flex flex-col items-center focus:outline-none "
+        >
           <label htmlFor="">Subscribe to get updates</label>
-          <input type="text" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className=" px-3 py-2 focus:outline-none rounded-md focus:border-black text-sm"
+          />
         </form>
       </div>
     </footer>
