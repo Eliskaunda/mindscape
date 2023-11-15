@@ -12,11 +12,13 @@ import Documents from "./features/Resources/Documents";
 import Videos from "./features/Resources/Videos";
 import Audio from "./features/Resources/Audio";
 import Patients from "./features/patients/Patients";
+import Signup from "./features/users/Signup";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="register" element={<Signup />} />
         <Route path="*" element={<PageNotFound />} />
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="/dashboard" />} />
