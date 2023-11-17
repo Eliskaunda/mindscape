@@ -1,17 +1,36 @@
 import supabase from "./Supabase";
 
-export async function CreateAccount() {
-  const { data, error } = await supabase.auth.signUp({
-    email: "someone@email.com",
-    password: "XghOIcXdfskqWAjysoTk",
+export async function createAccount({
+  password,
+  email,
+  phone,
+  firstName,
+  lastName,
+  location,
+}) {
+  const { data: userData, error } = await supabase.auth.signUp({
+    email: email,
+    password: password,
+    options: {
+      data: {
+        firstName,
+        lastName,
+        phone,
+        location,
+      },
+    },
   });
 
   if (error) {
-    console.error(error);
-    throw new Error("Could not create account. Try again");
+    if (error.message === "Email already in use") {
+      console.error("This email is already in use");
+    } else {
+      console.error(error.message);
+    }
+    throw new Error("Account could not be created.");
   }
 
-  return data;
+  return userData;
 }
 
 export async function LoginAccount() {

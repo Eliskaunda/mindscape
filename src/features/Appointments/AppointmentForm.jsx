@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  Button,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Select,
-  Switch,
-} from "antd";
+import { Button, DatePicker, Form, Input, InputNumber, Select } from "antd";
 
 const AppointmentForm = () => {
   const [componentSize, setComponentSize] = useState("default");
