@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { QueryClient, QueryClientContext } from "@tanstack/react-query";
+
 import { Toaster } from "react-hot-toast";
 
 import AppLayout from "./ui/AppLayout";
@@ -16,24 +16,23 @@ import Videos from "./features/Resources/Videos";
 import Audio from "./features/Resources/Audio";
 import Patients from "./features/patients/Patients";
 import Signup from "./features/users/Signup";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Login from "./features/users/Login";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 60 * 1000,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientContext client={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
+          {/* <Route path="/" element={<User />} /> */}
           <Route path="register" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate replace to="/dashboard" />} />
+            {/* <Route index element={<Navigate replace to="/dashboard" />} /> */}
             <Route path="/dashboard" element={<Homepage />} />
             <Route path="/chats" element={<Chat />} />
 
@@ -53,29 +52,28 @@ function App() {
             </Route>
           </Route>
         </Routes>
+        <Toaster
+          position="bottom-left"
+          gutter={12}
+          containerStyle={{ margin: "8px" }}
+          toastOptions={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 5000,
+            },
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              padding: "16px 12px",
+              backgroundColor: "var(--color-grey)",
+              color: "var(--color-black)",
+            },
+          }}
+        />
       </BrowserRouter>
-
-      <Toaster
-        position="bottom-left"
-        gutter={12}
-        containerStyle={{ margin: "8px" }}
-        toastOptions={{
-          success: {
-            duration: 3000,
-          },
-          error: {
-            duration: 5000,
-          },
-          style: {
-            fontSize: "16px",
-            maxWidth: "500px",
-            padding: "16px 12px",
-            backgroundColor: "var(--color-grey)",
-            color: "var(--color-black)",
-          },
-        }}
-      />
-    </QueryClientContext>
+    </QueryClientProvider>
   );
 }
 

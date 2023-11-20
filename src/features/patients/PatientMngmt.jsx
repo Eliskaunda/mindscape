@@ -3,7 +3,7 @@ import { Avatar } from "@mui/material";
 export function PatientMngmt() {
   const date = new Date();
   return (
-    <section className="w-full">
+    <section className="w-full ">
       <div className="py-4 px-6 bg-slate-100 space-y-4">
         <div>
           <p>👋 Hey, Good Morning</p>

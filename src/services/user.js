@@ -33,16 +33,16 @@ export async function createAccount({
   return userData;
 }
 
-export async function LoginAccount() {
+export async function LoginAccount({ email, password }) {
   const { data, error } = await supabase.auth.signInWithPassword({
-    email: "someone@email.com",
-    password: "XghOIcXdfskqWAjysoTk",
+    email: email,
+    password: password,
   });
 
   if (error) {
-    console.error(error);
-    throw new Error("Email/phone number or password is incorrect try again");
+    alert(error);
+    throw new Error("Email or password is incorrect try again");
   }
 
-  return data;
+  return data, error;
 }

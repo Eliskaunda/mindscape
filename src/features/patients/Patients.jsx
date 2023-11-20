@@ -4,7 +4,7 @@ import { PatientMngmt } from "./PatientMngmt";
 
 export default function Patients() {
   return (
-    <div className="flex justify-around h-screen">
+    <div className="flex flex-col md:flex-row justify-around md:h-screen">
       <PatientMngmt />
       <AppointmentMngt />
     </div>
