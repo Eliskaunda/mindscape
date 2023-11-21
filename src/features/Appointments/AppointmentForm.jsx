@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, DatePicker, Form, Input, InputNumber, Select } from "antd";
 
-const AppointmentForm = () => {
+const AppointmentForm = ({SetAppform}) => {
   const [componentSize, setComponentSize] = useState("default");
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
@@ -36,9 +36,9 @@ const AppointmentForm = () => {
       <Form.Item label="Date">
         <DatePicker />
       </Form.Item>
-      <Form.Item label="InputNumber">
+      {/* <Form.Item label="InputNumber">
         <InputNumber />
-      </Form.Item>
+      </Form.Item> */}
 
       <div className="flex gap-4">
         <Form.Item>
@@ -47,7 +47,7 @@ const AppointmentForm = () => {
           </Button>
         </Form.Item>
         <Form.Item>
-          <Button>Cancel</Button>
+          <Button onClick={() => SetAppform(false)}>Cancel</Button>
         </Form.Item>
       </div>
     </Form>
