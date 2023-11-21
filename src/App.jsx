@@ -32,7 +32,7 @@ function App() {
 
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
-            {/* <Route index element={<Navigate replace to="/dashboard" />} /> */}
+            <Route index element={<Navigate replace to="/dashboard" />} />
             <Route path="/dashboard" element={<Homepage />} />
             <Route path="/chats" element={<Chat />} />
 

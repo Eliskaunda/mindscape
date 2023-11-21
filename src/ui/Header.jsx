@@ -1,13 +1,8 @@
 import { Avatar } from "@mui/material";
-import {
-  Calendar3,
-  ChatDots,
-  ChevronDown,
-  Lightbulb,
-  Mask,
-} from "react-bootstrap-icons";
+import { Calendar3, ChatDots, Lightbulb, Mask } from "react-bootstrap-icons";
 
 import { NavLink, useNavigate } from "react-router-dom";
+import DropMenu from "./DropMenu";
 
 function Header() {
   const navigate = useNavigate();
@@ -73,7 +68,8 @@ function Header() {
       <div className="flex items-center gap-2">
         <Avatar style={{ width: 25, height: 25 }} />
         {/* <p className="text-sm">Denis</p> */}
-        <ChevronDown />
+
+        <DropMenu />
       </div>
     </header>
   );

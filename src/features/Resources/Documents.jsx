@@ -1,4 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import { Heart, Search } from "react-bootstrap-icons";
+import { getResources } from "../../services/resource";
 
 export default function Documents() {
   return (
@@ -30,6 +32,10 @@ export default function Documents() {
 }
 
 function DocumentCard() {
+  const { data: document, isLoading } = useQuery({
+    queryKey: ["resources"],
+    queryFn: getResources,
+  });
   return (
     <div className="bg-white shadow-lg rounded-md px-3 py-4 flex gap-4 w-60 md:w-[18rem]">
       <div className="space-y-6">

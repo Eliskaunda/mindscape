@@ -1,4 +1,5 @@
 import { DatePicker } from "antd";
+import patient from "/patient.svg";
 
 export function AppointmentMngt() {
   return (
@@ -7,8 +8,14 @@ export function AppointmentMngt() {
       <DatePicker />
 
       <div>
-        <h1>View and manage appointments</h1>
         {/* GET AN SVG WITH CALENDAR AND PATIENT */}
+
+        <div className="flex flex-col items-center">
+          <img src={patient} alt="" className="w-[20rem] py-8" />
+          <p className="text-lg text-orange">
+            Select a patient to view information
+          </p>
+        </div>
       </div>
     </section>
   );
