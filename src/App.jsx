@@ -18,7 +18,7 @@ import Patients from "./features/patients/Patients";
 import Signup from "./features/users/Signup";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./features/users/Login";
-import { Updatedetails } from "./users/Updatedetails";
+import Updatedetails from "./users/Updatedetails";
 
 const queryClient = new QueryClient();
 
@@ -27,15 +27,16 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
+          {/* <Route index element={<Navigate replace to="/dashboard" />} />*/}
           {/* <Route path="/" element={<User />} /> */}
           <Route path="register" element={<Signup />} />
           <Route path="login" element={<Login />} />
 
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate replace to="/" />}/>
-            <Route path="/" element={<Updatedetails />} />
-            // <Route index element={<Navigate replace to="/dashboard" />} />
+            <Route index element={<Navigate replace to="/update" />} />
+            <Route path="/update" element={<Updatedetails />} />
+
             <Route path="/dashboard" element={<Homepage />} />
             <Route path="/chats" element={<Chat />} />
 

@@ -1,32 +1,57 @@
-import { Form, Input, Button, Checkbox } from "antd";
-// const FormItem = Form.Item;
+import Button from "../ui/Button";
+import Form from "../ui/Form";
+import FormRow from "../ui/FormRow";
 
-export function Updatedetails() {
+function Updatedetails() {
   return (
-    <Form onSubmit={this.handleSubmit} className="login-form">
-      <FormItem>
-        {getFieldDecorator("userName", {
-          rules: [{ required: true, message: "Please input your username!" }],
-        })(<Input placeholder="Username" />)}
-      </FormItem>
-      <FormItem>
-        {getFieldDecorator("password", {
-          rules: [{ required: true, message: "Please input your Password!" }],
-        })(<Input type="password" placeholder="Password" />)}
-      </FormItem>
-      <FormItem>
-        {getFieldDecorator("remember", {
-          valuePropName: "checked",
-          initialValue: true,
-        })(<Checkbox>Remember me</Checkbox>)}
-        <a className="login-form-forgot" href="">
-          Forgot password
-        </a>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button>
-        Or <a href="">register now!</a>
-      </FormItem>
-    </Form>
+    <div className="h-full">
+      <Form>
+        <FormRow label="First Name">
+          <input
+            type="text"
+            className="text-base px-1 py-2 focus:outline-none border b-red-400"
+            placeholder="First Name"
+          />
+        </FormRow>
+
+        <FormRow label="Last Name">
+          <input
+            type="text"
+            className="text-base px-1 py-2 focus:outline-none border b-red-400"
+            placeholder="Last Name"
+          />
+        </FormRow>
+
+        <FormRow label="Phone Number">
+          <input
+            type="text"
+            className="text-base px-1 py-2 focus:outline-none border b-red-400"
+            placeholder="Phone Number"
+          />
+        </FormRow>
+
+        <FormRow label="Role">
+          <select className="text-base px-1 py-2 focus:outline-none border b-red-400">
+            <option value="doctor">Doctor</option>
+            <option value="patient">Patient</option>
+          </select>
+        </FormRow>
+
+        <FormRow label="Gender">
+          <select className="text-base px-1 py-2 focus:outline-none border b-red-400">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </FormRow>
+
+        <FormRow>
+          <button className="text-[1.3rem] border rounded-md bg-blue text-grey px-2 py-1 ">
+            Submit
+          </button>
+        </FormRow>
+      </Form>
+    </div>
   );
 }
+
+export default Updatedetails;

@@ -1,5 +1,6 @@
 import { FileEarmarkText, Film, Mic } from "react-bootstrap-icons";
 import { NavLink } from "react-router-dom";
+
 function ResourcesBar() {
   return (
     <div className="px-6 py-2 bg-grey h-full min-w-max">
