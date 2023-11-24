@@ -34,7 +34,7 @@ function App() {
 
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate replace to="/update" />} />
+            <Route index element={<Navigate replace to="/dashboard" />} />
             <Route path="/update" element={<Updatedetails />} />
 
             <Route path="/dashboard" element={<Homepage />} />

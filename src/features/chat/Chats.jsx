@@ -1,11 +1,14 @@
 import { ChatMessage } from "./ChatMessage";
 
 export function Chats({ showSide }) {
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
   return (
     <>
       {showSide && (
         <div className="absolute z-10 bg-grey  sm:relative sm:block ">
-          <form className=" mb-4 flex items-center gap-3 w-full text-black">
+          <form onSubmit={handleSubmit} className=" mb-4 flex items-center gap-3 w-full text-black">
             <input
               type="text"
               placeholder="Search Chat"
