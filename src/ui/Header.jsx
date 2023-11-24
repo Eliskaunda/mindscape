@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import { Calendar3, ChatDots, Lightbulb, Mask } from "react-bootstrap-icons";
+import { Calendar3, ChatDots, Lightbulb } from "react-bootstrap-icons";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import DropMenu from "./DropMenu";
@@ -45,7 +45,8 @@ function Header() {
           </span>
           <p className="hidden sm:block">Resources</p>
         </NavLink>
-        <NavLink
+
+        {/* <NavLink
           to="patients"
           className="text-sm md:text-base flex items-center gap-2"
         >
@@ -53,7 +54,8 @@ function Header() {
             <Mask />
           </span>
           <p className="hidden sm:block">Patient</p>
-        </NavLink>
+        </NavLink> */}
+
         {/* <NavLink
           to="notifications"
           className="text-sm md:text-base flex items-center gap-2"

@@ -1,10 +1,11 @@
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import supabase from "../services/Supabase";
+import { Link } from "react-router-dom";
 const items = [
   {
     key: "1",
-    label: <div onClick={() => supabase.auth.signOut()}>Logout</div>,
+    label: <Link to="/update">Profile</Link>,
   },
   {
     key: "2",
@@ -15,6 +16,14 @@ const items = [
     ),
     icon: <SmileOutlined />,
     disabled: true,
+  },
+  {
+    key: "3",
+    label: <Link to="/patients">Admin</Link>,
+  },
+  {
+    key: "4",
+    label: <div onClick={() => supabase.auth.signOut()}>Logout</div>,
   },
 ];
 const DropMenu = () => (
