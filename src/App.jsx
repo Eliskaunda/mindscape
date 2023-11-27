@@ -20,7 +20,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./features/users/Login";
 import Updatedetails from "./users/Updatedetails";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: 60 * 1000,
+  },
+});
 
 function App() {
   return (
@@ -34,7 +38,7 @@ function App() {
 
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate replace to="/dashboard" />} />
+            <Route index element={<Navigate replace to="/update" />} />
             <Route path="/update" element={<Updatedetails />} />
 
             <Route path="/dashboard" element={<Homepage />} />

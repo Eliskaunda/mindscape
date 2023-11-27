@@ -1,13 +1,21 @@
 import { Avatar, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../../services/user";
 
 export function Discover() {
   const navigate = useNavigate();
 
+  const x = useQuery({
+    queryKey: ["details"],
+    queryFn: getUser,
+  });
+  console.log(x);
+
   function handleStartChat() {
     // GO TO PRIVATE CHAT WITH THE CHAT ID
     // navigate('/app/chat/:id')
-    navigate("/chats");
+    navigate("/login");
   }
   return (
     <div className="my-2">

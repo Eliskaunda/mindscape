@@ -46,3 +46,14 @@ export async function LoginAccount({ email, password }) {
 
   return data, error;
 }
+
+export async function getUser() {
+  const { data: details, error } = await supabase.from("details").select("*");
+
+  if (error) {
+    console.error(error);
+    throw new Error("Couldn't get user details");
+  }
+
+  return details;
+}
