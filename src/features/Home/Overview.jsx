@@ -3,8 +3,21 @@ import { Link } from "react-router-dom";
 import { OpenFriend } from "./OpenFriend";
 import { AddFriend } from "./AddFriend";
 import { Discover } from "./Discover";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../../services/user";
+import Loader from "../../ui/Loader";
 
 function Overview() {
+  const {
+    isLoading,
+    data: details,
+    error,
+  } = useQuery({
+    queryKey: ["details"],
+    queryFn: getUser,
+  });
+
+  if (isLoading) return <Loader />;
   return (
     <div className="py-3 px-10 overflow-hidden">
       <div>
@@ -17,12 +30,13 @@ function Overview() {
       </div>
       {/* DISCOVER DOCTORS */}
       <div className="flex gap-6 flex-wrap flex-1 justify-center sm:justify-normal my-3">
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
-        <Discover />
+        {details.map((detail) => {
+          return (
+            detail.role === "doctor" && (
+              <Discover key={detail.id} detail={detail} />
+            )
+          );
+        })}
       </div>
 
       {/* FRIENDS */}
@@ -39,12 +53,19 @@ function Overview() {
         </div>
 
         <div className="flex gap-6 flex-wrap flex-1 justify-center sm:justify-normal ">
-          <AddFriend />
+          {details.map((detail) => {
+            return (
+              detail.role === "patient" && (
+                <AddFriend key={detail.id} detail={detail} />
+              )
+            );
+          })}
+          {/* <AddFriend />
           <OpenFriend />
           <AddFriend />
           <OpenFriend />
           <AddFriend />
-          <OpenFriend />
+          <OpenFriend /> */}
         </div>
       </div>
     </div>

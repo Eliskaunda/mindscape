@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import { Calendar3, ChatDots, Lightbulb } from "react-bootstrap-icons";
+import { Calendar3, ChatDots, House, Lightbulb } from "react-bootstrap-icons";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import DropMenu from "./DropMenu";
@@ -18,6 +18,16 @@ function Header() {
       </div>
 
       <nav className="flex items-center gap-4">
+        <NavLink
+          to="/dashboard"
+          className="text-sm md:text-base flex items-center gap-2"
+        >
+          <span className=" text-black">
+            <House />
+          </span>
+          <p className="hidden sm:block">Home</p>
+        </NavLink>
+
         <NavLink
           to="/chats"
           className="text-sm md:text-base flex items-center gap-2"
