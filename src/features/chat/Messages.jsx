@@ -6,8 +6,9 @@ function Messages({ userName, setUsername, room, setRoom, socket }) {
       socket.emit("join_room", { userName, room });
     }
   }
+
   return (
-    <div className="absolute left-0 px-2 py-1 flex flex-col gap-6 ">
+    <div className="col-start-1 col-end-2 w-full absolute left-0 px-2 py-1 flex flex-col gap-6 ">
       <h1 className="font-semibold text-lg">Messages</h1>
 
       <div className="">
@@ -21,7 +22,7 @@ function Messages({ userName, setUsername, room, setRoom, socket }) {
       <div className="border-b  flex gap-3" onClick={joinRoom}>
         <Avatar style={{ width: 32, height: 32 }} />
         <div className="flex flex-col">
-          <h1>Denis</h1>
+          <h1>{userName}</h1>
           <p className="font-light text-sm">Hello denis...</p>
         </div>
       </div>

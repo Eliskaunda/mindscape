@@ -28,7 +28,7 @@ function Header() {
           <p className="hidden sm:block">Home</p>
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           to="/chats"
           className="text-sm md:text-base flex items-center gap-2"
         >
@@ -36,7 +36,7 @@ function Header() {
             <ChatDots />
           </span>
           <p className="hidden sm:block">Chats</p>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/appointments"
           className="text-sm md:text-base flex items-center gap-2"
@@ -54,6 +54,16 @@ function Header() {
             <Lightbulb />
           </span>
           <p className="hidden sm:block">Resources</p>
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className="text-sm md:text-base flex items-center gap-2"
+        >
+          <span className=" text-black">
+            <Lightbulb />
+          </span>
+          <p className="hidden sm:block">About</p>
         </NavLink>
 
         {/* <NavLink
@@ -78,6 +88,7 @@ function Header() {
       </nav>
 
       <div className="flex items-center gap-2">
+        <h2>Felista</h2>
         <Avatar style={{ width: 25, height: 25 }} />
         {/* <p className="text-sm">Denis</p> */}
 

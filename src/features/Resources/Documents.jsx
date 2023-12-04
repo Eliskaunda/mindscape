@@ -11,9 +11,9 @@ export default function Documents() {
   if (isLoading) return <Loader />;
   return (
     <div className="space-y-4 mx-auto ">
-      <h1>Documents</h1>
+      <h1 className="font-bold text-xl">Documents</h1>
       <div>
-        <form
+        {/* <form
           action=""
           className="border border-grey rounded-md w-[18rem] px-3 py-2 flex items-center"
         >
@@ -25,7 +25,7 @@ export default function Documents() {
           <div className="text-lightBlue">
             <Search />
           </div>
-        </form>
+        </form> */}
       </div>
       <div className="flex  flex-wrap gap-6 md:justify-normal mt-4">
         {document.map((doc) => (

@@ -38,12 +38,19 @@ export function Discover({ detail }) {
             <Avatar style={{ width: 30, height: 30 }} />
           </Stack>
 
-          <button
+          {/* <button
             className="border border-lightBlue rounded-md text-lightBlue px-2 py-1 my-3"
             onClick={handleStartChat}
           >
             Talk to {detail.firstName}
-          </button>
+          </button> */}
+          <a
+            href="https://wa.me/254710220825"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Talk to {detail.firstName}
+          </a>
         </div>
       </div>
     </div>

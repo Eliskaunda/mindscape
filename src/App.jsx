@@ -9,6 +9,7 @@ import Profile from "./Pages/Profile";
 import Appointments from "./Pages/Appointments";
 import Notifications from "./Pages/Notifications";
 import PageNotFound from "./Pages/PageNotFound";
+import About from "./Pages/About";
 import ResourceLayout from "./features/Resources/ResourceLayout";
 import AllResources from "./features/Resources/AllResources";
 import Documents from "./features/Resources/Documents";
@@ -38,13 +39,13 @@ function App() {
 
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate replace to="/update" />} />
+            <Route index element={<Navigate replace to="/dashboard" />} />
             <Route path="/update" element={<Updatedetails />} />
 
             <Route path="/dashboard" element={<Homepage />} />
             <Route path="/chats" element={<Chat />} />
-
             <Route path="/profile" element={<Profile />} />
+            <Route path="about" element={<About />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="appointments" element={<Appointments />} />
             <Route path="patients" element={<Patients />} />

@@ -1,7 +1,8 @@
 export default function Videos() {
   return (
     <div>
-      <table className="table-fixed text-left border-collapse border border-spacing-1 border-black w-full px-2">
+      <YoutubeEmbed videoId="ewaDxKjmO2Y" />
+      {/* <table className="table-fixed text-left border-collapse border border-spacing-1 border-black w-full px-2">
         <thead className="border border-black">
           <tr>
             <th>Name</th>
@@ -19,7 +20,22 @@ export default function Videos() {
             <td>1.2mb</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
+
+const YoutubeEmbed = ({ videoId }) => {
+  return (
+    <div className="embed-responsive embed-responsive-16by9">
+      <iframe
+        width="460"
+        height="300"
+        className="embed-responsive-item"
+        src={`https://www.youtube.com/embed/${videoId}`}
+        allowFullScreen
+        title="Embedded YouTube Video"
+      />
+    </div>
+  );
+};

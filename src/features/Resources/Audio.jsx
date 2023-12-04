@@ -1,5 +1,6 @@
 import { Search } from "react-bootstrap-icons";
 import { AudioCard } from "./AudioCard";
+import ReactPlayer from "react-player";
 
 export default function Audio() {
   return (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pause, Play } from "react-bootstrap-icons";
+import ReactPlayer from "react-player";
 // import aud from "./audio.mp3";
 
 export function AudioCard() {
@@ -28,9 +29,15 @@ export function AudioCard() {
       </div>
       <div className="flex items-center gap-3">
         <p>03:28</p>
+        <ReactPlayer
+          url="/kae.mpeg"
+          playing={playing}
+          width="100%"
+          height="100%"
+        />
         {playing ? (
           <Pause
-            style={{ fontSize: "1.6rem", color: "#383634" }}
+            style={{ fontSize: "2rem", color: "#383634" }}
             onClick={handlePlay}
           />
         ) : (
