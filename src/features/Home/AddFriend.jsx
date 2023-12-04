@@ -13,7 +13,7 @@ export function AddFriend({ detail }) {
         </div>
       </div>
       <button className="outline-none border border-b-orange py-1">
-        Add friend
+        Talk to {detail.firstName}
       </button>
     </div>
   );

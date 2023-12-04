@@ -9,7 +9,7 @@ export default function Footer() {
       <nav>
         <ul>
           <h2>Company</h2>
-          <Link>About</Link>
+          <Link to="/about">About</Link>
         </ul>
       </nav>
       <div></div>

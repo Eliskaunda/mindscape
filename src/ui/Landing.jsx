@@ -5,12 +5,11 @@ function Landing() {
     <div className="flex items-center justify-around h-2/3 py-10 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
       <div className="w-1/2 flex flex-col items-start gap-5">
         <h1 className="text-3xl text-white font-bold  uppercase">
-          Get psychological support to help you heal mentally
+        Join Mindscape and Prioritize Your Mental Well-being Today!
         </h1>
 
         {/* IF LOGGED  IN THEN GO TO CHATS PAGE IF NOT OPEN LOGIN FORM*/}
-        <Link
-          to="/chats"
+        <Link to='/resources'
           className="bg-orange px-3 py-2 rounded-full text-white capitalize font-medium"
         >
           Get started
