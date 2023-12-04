@@ -20,6 +20,7 @@ import Signup from "./features/users/Signup";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./features/users/Login";
 import Updatedetails from "./users/Updatedetails";
+import Register from "./services/Register";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,12 +35,12 @@ function App() {
         <Routes>
           {/* <Route index element={<Navigate replace to="/dashboard" />} />*/}
           {/* <Route path="/" element={<User />} /> */}
-          <Route path="register" element={<Signup />} />
           <Route path="login" element={<Login />} />
 
           <Route path="*" element={<PageNotFound />} />
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="/dashboard" />} />
+            <Route path="register" element={<Register />} />
             <Route path="/update" element={<Updatedetails />} />
 
             <Route path="/dashboard" element={<Homepage />} />

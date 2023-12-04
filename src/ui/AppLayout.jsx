@@ -20,40 +20,39 @@ function AppLayout() {
     });
     return () => subscription.unsubscribe();
   }, []);
+  // if (!session) {
+  //   return (
+  //     <div
+  //       style={{
+  //         width: "100vw",
+  //         height: "100vh",
+  //         display: "flex",
+  //         justifyContent: "center",
+  //         alignItems: "center",
+  //       }}
+  //     >
+  //       <div>
+  //         <Auth
+  //           supabaseClient={supabase}
+  //           appearance={{ theme: ThemeSupa }}
+  //           providers={["google"]}
+  //         />
+  //       </div>
+  //     </div>
+  //   );
+  // } else {
 
-  if (!session) {
-    return (
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <Auth
-            supabaseClient={supabase}
-            appearance={{ theme: ThemeSupa }}
-            providers={["google"]}
-          />
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="w-full">
-        <Header />
+  return (
+    <div className="w-full">
+      <Header />
 
-        <main className="min-h-full ">
-          <Outlet />
-        </main>
+      <main className="min-h-full ">
+        <Outlet />
+      </main>
 
-        <Footer />
-      </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 
 export default AppLayout;
