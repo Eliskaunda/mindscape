@@ -1,13 +1,32 @@
 import { Avatar } from "@mui/material";
 import { ChevronLeft, Plus, Send } from "react-bootstrap-icons";
+import Messages from "../features/chat/Messages";
+import { ReceivedMessage } from "../features/chat/ReceivedMessage";
+import { SentMessage } from "../features/chat/SentMessage";
+import { useState } from "react";
+
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:3000");
 
 export default function Chat() {
+  const [userName, setUsername] = useState("");
+  const [room, setRoom] = useState("");
+
   function handleAddFile() {
     <input type="file" name="" id="" />;
   }
+
   return (
-    <div className="h-[91vh] relative top-0 translate-y-0 grid grid-cols-[auto_75vw]">
-      <div className="absolute left-0">Messages</div>
+    <div className="h-[91vh] relative top-0 translate-y-0 grid grid-cols-[auto_30vw] sm:grid-cols-[auto_75vw] ">
+      {/* ON SMALL SCREEN THE MESSAGE COMPONENT WILL BE A DRAWER COMPONENT */}
+      <Messages
+        userName={userName}
+        setUsername={setUsername}
+        room={room}
+        setRoom={setRoom}
+        socket={socket}
+      />
 
       <div className="border-l-2 h-full absolute left-[25vw]   place-content-end">
         <div className="bg-grey px-3 py-5 fixed w-[73vw]">
@@ -20,7 +39,7 @@ export default function Chat() {
           </div>
         </div>
         <div className="p-3 flex flex-col h-full overflow-y-scroll mb-3">
-          <Messages />
+          <ChatRoom />
         </div>
         <form
           action=""
@@ -39,7 +58,7 @@ export default function Chat() {
   );
 }
 
-function Messages() {
+function ChatRoom() {
   return (
     <>
       <SentMessage />
@@ -51,28 +70,5 @@ function Messages() {
       <SentMessage />
       <ReceivedMessage />
     </>
-  );
-}
-
-function ReceivedMessage() {
-  return (
-    <div className="self-start bg-grey  rounded-lg flex items-center w-1/2 ">
-      <p className="text-sm sm:text-sm  p-2 tracking-wider">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
-        laborum sed voluptatum at. Praesentium labore, neque beatae, placeat
-        laudantium doloribus sunt molestiae incidunt officiis debitis quis
-        laboriosam quaerat, asperiores vitae?
-      </p>
-    </div>
-  );
-}
-
-function SentMessage() {
-  return (
-    <div className="self-end bg-lightBlue text-white rounded-lg p-2 m-1 flex items-center  w-1/2">
-      <p className="text-sm sm:text-sm tracking-wider">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      </p>
-    </div>
   );
 }
