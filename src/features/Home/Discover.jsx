@@ -2,6 +2,7 @@ import { Avatar, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export function Discover({ detail }) {
+  
   const navigate = useNavigate();
 
   function handleStartChat() {
@@ -45,7 +46,7 @@ export function Discover({ detail }) {
             Talk to {detail.firstName}
           </button> */}
           <a
-            href="https://wa.me/254710220825"
+            href={`https://wa.me/${detail.phoneNumber}`}
             target="_blank"
             rel="noopener noreferrer"
           >
