@@ -1,14 +1,12 @@
 import { useState } from "react";
 import supabase from "./Supabase";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
-  const [loading, setLoading] = useState("");
 
   const [phone, setPhone] = useState("");
 

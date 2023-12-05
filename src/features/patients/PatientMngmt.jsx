@@ -1,6 +1,6 @@
 import { Avatar } from "@mui/material";
 
-export function PatientMngmt() {
+export function PatientMngmt({ setViewpatient, viewpatient }) {
   const date = new Date();
   return (
     <section className="w-full ">
@@ -40,8 +40,16 @@ export function PatientMngmt() {
         <h1 className="my-3 text-bold capitalize">Today&apos;s appointments</h1>
 
         <div>
-          <DisplayTable />
-          <DisplayTable />
+          {/* <div
+            className="cursor-pointer focus:translate-y-2"
+            onClick={() => setViewpatient(!viewpatient)}
+          >
+            <DisplayTable />
+          </div> */}
+          <DisplayTable
+            setViewpatient={setViewpatient}
+            viewpatient={viewpatient}
+          />
           <DisplayTable />
           <DisplayTable />
         </div>
@@ -50,7 +58,7 @@ export function PatientMngmt() {
   );
 }
 
-function DisplayTable() {
+function DisplayTable({ setViewpatient, viewpatient }) {
   return (
     <div className="flex items-baseline justify-between gap-2 border-b border-black py-3">
       <p className="text-sm px-1 py-2 ">10:00am</p>
@@ -62,11 +70,14 @@ function DisplayTable() {
         Upcoming...
       </p>
       <div className="flex justify-around gap-2">
-        <button className="px-1 py-2 bg-blue text-white rounded-md text-sm">
-          Reshedule
-        </button>
         <button className="bg-orange text-sm uppercase px-1 py-2 rounded-md font-medium text-black">
           Cancel
+        </button>
+        <button
+          className="px-1 py-2 bg-blue text-white rounded-md text-sm"
+          onClick={() => setViewpatient(!viewpatient)}
+        >
+          View
         </button>
       </div>
     </div>
